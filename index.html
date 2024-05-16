@@ -4,31 +4,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CÁP NGUYỄN HIẾU NGHĨA</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/hieunghia.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'></script>
+    <script src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'></script>
 </head>
 
 <body>
+    <div class="color-bg">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
+    <div class="nav-mobile">
+        <div class="navigation">
+            <ul>
+                <li class="list active">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="text">Profile</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="text">Message</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="image-outline"></ion-icon>
+                        </span>
+                        <span class="text">Photos</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="text">Settings</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+    </div>
     <header>
+        <!-- hv -->
+        <div class="hv">
+            <div class="background-one">
+                <div class="link-container">
+                    <a class="link-one" href="./game/index.html">Game <i class="fa-solid fa-gamepad"></i></a>
+                </div>
+            </div>
+            <div class="background-two link-container">
+                <a class="link-two" href="./tienich/index.html">Tiện Ích <i class="fa-solid fa-earth-asia"></i></a>
+            </div>
+            <div class="background-three link-container">
+                <a class="link-three" href="#">Phát Triển <i class="fa-solid fa-flask"></i></a>
+            </div>
+        </div>
         <div class="infor">
+            <div class="logo">
+                <img src="./image/hieunghia.jpg" alt="logo">
+            </div>
             <div class="name">CÁP NGUYỄN HIẾU NGHĨA</div>
             <div class="specialized">Lập Trình Viên</div>
             <div class="icon">
                 <ul>
+                   <a href="./kiennghihotline.html"> điên thoại</a>
                     <li><a href="./page/form.html" class="ic1"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href="" class="ic2"><i class="fa-solid fa-gear"></i></a></li>
-                    <li><a href="" class="ic3"><i class="fa-brands fa-paypal"></i></a></li>
+                    <li><a href="./thunghiem.html" class="ic2"><i class="fa-solid fa-gear"></i></a></li>
+                    <li><a href="./game/index.html" class="ic3"><i class="fa-brands fa-paypal"></i></a></li>
                     <li><a href="" class="ic4"><i class="fa-brands fa-github"></i></a></li>
                 </ul>
             </div>
         </div>
-        <div class="logo">
-            <img src="./image/hieunghia.jpg" alt="logo">
-        </div>
     </header>
+    <!-- skill -->
+    <div class="skill">
+        <div class="container-sk">
+            <div class="skill-box">
+                <span class="title">HTML</span>
+
+                <div class="skill-bar">
+                    <span class="skill-per html">
+                        <span class="tooltip">90%</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <span class="title">CSS</span>
+
+                <div class="skill-bar">
+                    <span class="skill-per css">
+                        <span class="tooltip">70%</span>
+                    </span>
+                </div>
+            </div>
+            <div class="skill-box">
+                <span class="title">JavaScript</span>
+                <div class="skill-bar">
+                    <span class="skill-per javascript">
+                        <span class="tooltip">50%</span>
+                    </span>
+                </div>
+            </div>
+            <div class="skill-box">
+                <span class="title">NodeJS</span>
+
+                <div class="skill-bar">
+                    <span class="skill-per nodejs">
+                        <span class="tooltip">30%</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- card -->
+    <div class="all-card">
+        <div class="card">
+            <div class="wrapper">
+                <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-cover.jpg" class="cover-image" />
+            </div>
+            <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" />
+            <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-character.webp" class="character" />
+        </div>
+
+        <div class="card">
+            <div class="wrapper">
+                <img src="https://ggayane.github.io/css-experiments/cards/force_mage-cover.jpg" class="cover-image" />
+            </div>
+            <img src="https://ggayane.github.io/css-experiments/cards/force_mage-title.png" class="title" />
+            <img src="https://ggayane.github.io/css-experiments/cards/force_mage-character.webp" class="character" />
+        </div>
+    </div>
+    <!-- slide -->
+    <div class="slide-xoay">
+        <div class="image-container">
+            <span style="--i: 1">
+                <img src="https://picsum.photos/id/237/300/200">
+            </span>
+            <span style="--i: 2">
+                <img src="https://picsum.photos/id/21/300/200">
+            </span>
+            <span style="--i: 3">
+                <img src="https://picsum.photos/id/32/300/200">
+            </span>
+            <span style="--i: 4">
+                <img src="https://picsum.photos/id/48/300/200">
+            </span>
+            <span style="--i: 5">
+                <img src="https://picsum.photos/id/25/300/200">
+            </span>
+            <span style="--i: 6">
+                <img src="https://picsum.photos/id/10/300/200">
+            </span>
+            <span style="--i: 7">
+                <img src="https://picsum.photos/id/8/300/200">
+            </span>
+            <span style="--i: 8">
+                <img src="https://picsum.photos/id/18/300/200">
+            </span>
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="btn prev">Prev</button>
+        <button class="btn next">Next</button>
+    </div>
+
+    <!-- partial -->
+    <div class="fullPageMenu" id="nav">
+        <div class="banner">
+            <img src="https://images.unsplash.com/photo-1453989799106-bbad8d7b5191?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
+                alt="image">
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="#" data-text="Home">Home</a></li>
+                <li><a href="#" data-text="About">About</a></li>
+                <li><a href="#" data-text="Services">Services</a></li>
+                <li><a href="#" data-text="Team">Team</a></li>
+                <li><a href="#" data-text="Portfolio">Portfolio</a></li>
+                <li><a href="#" data-text="Contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <span class="menuicon" id="toggle" onclick="menuToggle()"></span>
     <script src="./js/main.js"></script>
 </body>
 
