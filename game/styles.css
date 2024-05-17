@@ -12,8 +12,6 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    position: fixed;
-    z-index: 999;
 }
 
 .logo {
