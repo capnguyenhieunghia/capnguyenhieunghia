@@ -4,13 +4,13 @@ checkbox.addEventListener("change", () => {
 })
 // nava mobile
 const list = document.querySelectorAll('.list');
-function activeLink(){
-    list.forEach((item)=>
-    item.classList.remove('active'));
+function activeLink() {
+    list.forEach((item) =>
+        item.classList.remove('active'));
     this.classList.add('active');
 }
 list.forEach((item) =>
-item.addEventListener('click',activeLink));
+    item.addEventListener('click', activeLink));
 var player;
 
 function onYouTubeIframeAPIReady() {
@@ -63,12 +63,3 @@ function updateContainer() {
     }, 2000);
 }
 updateContainer();
-// clock
-
-
-function menuToggle() {
-    var nav = document.getElementById("nav")
-    var toggle = document.getElementById("toggle")
-    nav.classList.toggle("active")
-    toggle.classList.toggle("active")
-}
