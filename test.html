@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiếu Nghĩa</title>
+    <meta property="og:title" content="Cáp Nguyễn Hiếu Nghĩa">
+    <meta property="og:description" content="Trang thông tin của Nghĩa.">
+    <meta property="og:image" content="./image/nghia_img_ws.jpg">
+    <meta property="og:url" content="https://capnguyenhieunghia.github.io/capnguyenhieunghia/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cáp Nguyễn Hiếu Nghĩa">
+    <meta name="twitter:description" content="Trang thông tin của Nghĩa.">
+    <meta name="twitter:image" content="./image/nghia_img_ws.jpg">
+    <link rel="icon" href="./image/nghia_img_ws.jpg" type="image/png">
+    <meta name="description" content="Cáp Nguyễn Hiếu Nghĩa công nghệ.">
+    <meta name="keywords"
+        content="Cáp Nguyễn Hiếu Nghĩa, capnguyenhieunghia, hieunghia, gitcapnguyenhieunghia, congnghethongtin, thông tin công nghệ">
+    <meta name="author" content="Cáp Nguyễn Hiếu Nghĩa">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .logo:hover {
+            color: #ffdd57;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            transition: max-height 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .menu a:hover {
+            background: #575757;
+            transform: scale(1.05);
+        }
+
+        .toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                background: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                max-height: 0;
+                overflow: hidden;
+            }
+
+            .menu.show {
+                display: flex;
+                max-height: 300px;
+                /* Adjust as needed */
+            }
+
+            .toggle {
+                display: block;
+                font-size: 24px;
+                color: #fff;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f1f1f1;
+        }
+
+        section {
+            padding: 50px 20px;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Cáp Nguyễn Hiếu Nghĩa</div>
+            <div class="toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="menu" id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content sections -->
+    <section id="home">
+        <h1>Welcome to the Home Section</h1>
+        <p>This is a brief introduction to our website.</p>
+    </section>
+    <section id="about">
+        <h1>About Us</h1>
+        <p>Learn more about what we do and our mission.</p>
+    </section>
+    <section id="services">
+        <h1>Our Services</h1>
+        <p>Discover the services we offer to help you.</p>
+    </section>
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <p>Get in touch with us for more information.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Cáp Nguyễn Hiếu Nghĩa. Tất cả quyền được bảo lưu.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>
