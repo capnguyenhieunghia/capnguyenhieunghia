@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiếu Nghĩa</title>
+    <meta property="og:title" content="Cáp Nguyễn Hiếu Nghĩa">
+    <meta property="og:description" content="Trang thông tin của Nghĩa.">
+    <meta property="og:image" content="./image/nghia_img_ws.jpg">
+    <meta property="og:url" content="https://capnguyenhieunghia.github.io/capnguyenhieunghia/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cáp Nguyễn Hiếu Nghĩa">
+    <meta name="twitter:description" content="Trang thông tin của Nghĩa.">
+    <meta name="twitter:image" content="./image/nghia_img_ws.jpg">
+    <link rel="icon" href="./image/nghia_img_ws.jpg" type="image/png">
+    <meta name="description" content="Cáp Nguyễn Hiếu Nghĩa công nghệ.">
+    <meta name="keywords"
+        content="Cáp Nguyễn Hiếu Nghĩa, capnguyenhieunghia, hieunghia, gitcapnguyenhieunghia, congnghethongtin, thông tin công nghệ">
+    <meta name="author" content="Cáp Nguyễn Hiếu Nghĩa">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0 10px 10px 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        #search-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            margin-right: 10px;
+            outline: none;
+        }
+
+        #search-container button {
+            padding: 10px 15px;
+            background-color: navy;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #search-container button:hover {
+            background-color: white;
+            color: navy;
+        }
+
+        .datatn {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            position: relative;
+            border: 1px solid #ccc;
+            padding: 20px 15px;
+            background-color: #fff;
+            width: 600px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            overflow: hidden;
+            border-left: 10px solid navy;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .card .index {
+            position: absolute;
+            background-color: navy;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            right: 3px;
+            top: 3px;
+            font-weight: bold;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .phone,
+        .verification,
+        .message {
+            margin-bottom: 10px;
+        }
+
+        .message {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 200px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .message:hover {
+            color: white;
+            background-color: navy;
+        }
+
+        .details {
+            display: none;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+
+        #no-data {
+            display: none;
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            color: navy;
+        }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['table']
+        });
+        google.charts.setOnLoadCallback(drawTable);
+
+        let allData = [];
+
+        function drawTable(searchName = '') {
+            showLoading(true);
+            var queryString = encodeURIComponent('SELECT B, C, D, E LIMIT 100');
+            var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1zw1qVGt4-lrnvpLJ1dPym9Q7Fr-dbWS95wITqeW9tec/gviz/tq?sheet=L_Tốt nghiệp&tq=' + queryString);
+
+            query.send(function (response) {
+                showLoading(false);
+
+                if (response.isError()) {
+                    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+                    return;
+                }
+                var data = response.getDataTable();
+                allData = data;
+
+                filterData(searchName);
+            });
+        }
+
+        function filterData(searchName) {
+            var html = '';
+            var noData = true;
+            var index = 1;
+
+            for (var i = 0; i < allData.getNumberOfRows(); i++) {
+                var name = allData.getValue(i, 0);
+                if (name.toLowerCase().includes(searchName.toLowerCase())) {
+                    noData = false;
+                    html += '<div class="card">';
+                    html += '<div class="index">' + index + '</div>';
+                    html += '<div class="name">Họ Tên: ' + name + '</div>';
+                    var phone = allData.getValue(i, 1);
+                    html += '<div class="phone">Số Điện Thoại: ***' + phone.slice(-3) + '</div>';
+                    html += '<div class="verification">Xác Nhận: ' + allData.getValue(i, 2) + '</div>';
+                    var message = allData.getValue(i, 3);
+                    html += '<div class="message" onclick="toggleDetails(this)">Lời Chúc: ' + message + '</div>';
+                    html += '<div class="details"><strong>Lời chúc chi tiết:</strong><br/>Họ Tên: ' + name + '<br/>Số Điện Thoại: ***' + phone.slice(-3) + '<br/>Xác Nhận: ' + allData.getValue(i, 2) + '<br/>Lời Chúc: ' + message + '</div>';
+                    html += '</div>';
+                    index++;
+                }
+            }
+
+            document.getElementById('table_div').innerHTML = html;
+            document.getElementById('no-data').style.display = noData ? 'block' : 'none';
+        }
+
+        function toggleDetails(element) {
+            var detailsDiv = element.nextElementSibling;
+            detailsDiv.style.display = detailsDiv.style.display === 'none' || detailsDiv.style.display === '' ? 'block' : 'none';
+        }
+
+        function search() {
+            var searchName = document.getElementById('search-input').value.trim();
+            if (searchName === '') {
+                alert('Vui lòng nhập tên để tìm kiếm.');
+                return;
+            }
+            filterData(searchName);
+        }
+
+        function showLoading(isLoading) {
+            document.getElementById('loading').style.display = isLoading ? 'block' : 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="ql" style="background-color: navy; width: 80px; padding: 5px; text-align: center;"><a href="index.html"
+            style="color: white;"><i class="fa-solid fa-arrow-left"></i></a></div>
+    <h1 style="margin: 20px 0;">LỜI CHÚC</h1>
+    <div id="loading">Đang tải...</div>
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Nhập tên để tìm kiếm" autocomplete="off" />
+        <button onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <div id="no-data">Không có dữ liệu phù hợp.</div>
+    <div class="datatn" id="table_div"></div>
+</body>
+
+</html>
