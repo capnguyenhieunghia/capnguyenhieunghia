@@ -32,7 +32,9 @@
     box-shadow: var(--main-shadow);
 }
 
-.mxh a {}
+.mxh a {
+    color: navy;
+}
 
 .even {
     width: 60%;

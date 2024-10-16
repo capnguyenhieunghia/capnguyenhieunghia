@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Hình Tự Động</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 1s ease;
+            width: 100%;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <div class="slide" style="background-image: url('https://th.bing.com/th?id=OIP.435yivvLrljAWbHBhudoBQHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');"></div>
+            <div class="slide" style="background-image: url('https://th.bing.com/th?id=OIP.OLcw6aOhbmlsx_rLMhlRUgHaE8&w=306&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');"></div>
+            <div class="slide" style="background-image: url('https://th.bing.com/th?id=OIP.ApiZBc717inX0ZSWuryfWAHaE7&w=306&h=203&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');"></div>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slideCount = document.querySelectorAll('.slide').length;
+        let currentIndex = 0;
+
+        function showNextSlide() {
+            const randomIndex = Math.floor(Math.random() * slideCount);
+            slides.style.transform = `translateX(-${randomIndex * 100}%)`;
+            currentIndex = randomIndex;
+        }
+
+        setInterval(showNextSlide, 3000);
+    </script>
+</body>
+</html>
