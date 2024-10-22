@@ -1,5 +1,6 @@
+<!-- Cáp Nguyễn Hiếu Nghĩa -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vn">
 
 <head>
     <meta charset="UTF-8">
@@ -30,8 +31,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <style>
-
-        a{
+        a {
             text-decoration: none;
         }
 
@@ -71,80 +71,76 @@
             /* Active indicator hover */
         }
 
-        .menu {
-            text-align: center;
-            margin: 20px 0;
+        .vd {
+            position: relative;
         }
 
-        .mxh a {
-            margin: 0 10px;
-            color: #007bff;
+        .vd .noidung {
+            position: absolute;
+            top: 0;
+            width: 100%;
         }
 
-        .mxh a:hover {
-            text-decoration: underline;
+        @media (max-width: 748px) {
+            video {
+                display: none;
+            }
+
         }
     </style>
 </head>
 
 <body>
-    <h2 style="margin: 15px 0; text-align: center;">CÁP NGUYỄN HIẾU NGHĨA</h2>
-    <div class="even">
-        <div class="evenit">
-            <div class="evimg"><img src="./image/mutn.png" alt=""></div>
-            <div class="xn">
-                <h3 style="margin-bottom: 10px; color: black; text-align: center;">LỄ TỐT NGHIỆP <i
-                        class="fa-solid fa-graduation-cap"></i></h3>
-                <a href="https://forms.gle/qq9aL7J66hUq4yTD8"><i class="fa-solid fa-paperclip"></i> Xác nhận tham dự</a>
-                <a href="./loichuc.html"><i class="fa-regular fa-rectangle-list"></i> Lời chúc</a>
-            </div>
-            <div class="ttev">
-                <div><i class="fa-solid fa-calendar-days"></i> 16/11/2024</div>
-            </div>
-        </div>
-    </div>
-    <div class="menu">
-        <div class="mxh"><a href="https://www.facebook.com/capnguyenhieunghia">Facebook</a></div>
-        <div class="mxh"><a href="https://zalo.me/0338704530">Zalo</a></div>
-        <div class="mxh"><a href="mailto:capnguyenhieunghia@gmail.com">Gmail</a></div>
-    </div>
-
-    <div class="carousel-container">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                    aria-label="Slide 4"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./image/nguoi1.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./image/nguoi2.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./image/nguoi5.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./image/nguoi4.png" class="d-block w-100" alt="...">
+    <div class="vd">
+        <video autoplay muted loop style="width: 100%;">
+            <source src="video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="noidung">
+            <div class="even">
+                <div class="evenit">
+                    <div class="evimg"><img src="./image/mutn.png" alt=""></div>
+                    <div class="xn">
+                        <h3 style="margin-bottom: 10px; color: black; text-align: center;">LỄ TỐT NGHIỆP <i
+                                class="fa-solid fa-graduation-cap"></i></h3>
+                        <a href="https://forms.gle/qq9aL7J66hUq4yTD8"><i class="fa-solid fa-paperclip"></i> Xác nhận
+                            tham
+                            dự</a>
+                        <a href="./loichuc.html"><i class="fa-regular fa-rectangle-list"></i> Lời chúc</a>
+                    </div>
+                    <div class="ttev">
+                        <div><i class="fa-solid fa-calendar-days"></i> 16/11/2024</div>
+                    </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="carousel-container">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./image/nguoi2.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/nguoi1.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/nguoi5.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/nguoi4.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
